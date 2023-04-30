@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "image":"image/sofa.jpg",
+        "name": "L-shaped Sofa",
+        "price": "35000",
+        "button":"Order Now --->"
+    },
+    {
+        "id":2,
+        "image":"image/wardrobe.jpg",
+        "name": "Wardrobe",
+        "price": "59500",
+        "button":"Order Now --->"
+    },
+    {
+        "id":3,
+        "image":"image/table.jpg",
+        "name": "Modern Table",
+        "price": "10000",
+        "button":"Order Now --->"
+    },
+    {
+        "id":4,
+        "image":"image/tv_unit.jpg",
+        "name": "TV unit",
+        "price": "19000",
+        "button":"Order Now --->"
+    },
+    {
+        "id":5,
+        "image":"image/ceiling.jpg",
+        "name": "False Ceiling",
+        "price": "25000",
+        "button":"Order Now --->"
+    }
+
+]

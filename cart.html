@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Design</title>
+    <!-- bootstrap link -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- fontawsome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid m-0 p-0">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./home.html"><span>H</span>ome <span>D</span>esigns</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav  mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="./home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./cart.html">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./order.html">Orders</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row mx-0 my-5 ">
+            <div class="cart_product"></div>
+            <div class="row justify-content-center cart_product_row my-5 text-center">
+                <hr>
+                <h3>Total Cost :</h3>
+
+            </div>
+            <div class="row total_row">
+
+            </div>
+            <div class="row">
+                <div class="btn btn-outline-primary w-25 mx-auto" onclick="order()">Place Order</div>
+            </div>
+        </div>
+
+
+        <footer class="row m-0 p-5 text-light w-100" style="background-color: black;">
+            <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3 foot">
+
+                <h5>COMPANY</h5>
+
+                <a href="#"> HOME</a><br>
+                <a href="#"> ABOUT US</a><br>
+                <a href="#"> SHOP</a><br>
+                <a href="#"> BLOG</a><br>
+                <a href="#"> CONTACT US</a><br>
+
+            </div>
+            <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3 foot">
+
+                <h5>SERVICES</h5>
+
+                <a href="#">SUPPORT</a><br>
+                <a href="#">FAQ</a><br>
+                <a href="#">WARRANTY</a><br>
+                <a href="#">LIVE CHAT</a><br>
+                <a href="#">PRIVACY POLICY</a><br>
+            </div>
+            <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3 foot">
+                <h5>ORDERS & RETURNS</h5>
+                <a href="#">ORDER</a><br>
+                <a href="#">STATUS</a><br>
+                <a href="#">SHIPPING</a><br>
+                <a href="#">POLICY & SERVICES</a><br>
+                <a href="#">CART</a><br>
+            </div>
+            <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 mt-3 foot">
+                <h5>CONTACT US</h5>
+                <input type="text" class="w-50" placeholder="email-id"> <button
+                    class="btn btn-outline-light">SUBSCRIBE</button>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        let array_cost = [];
+        let carts = JSON.parse(localStorage.getItem("cart"))
+        let product = document.querySelector(".cart_product")
+        let product_row = document.querySelector(".cart_product_row")
+        let total_row = document.querySelector(".total_row")
+        let carts_order = JSON.parse(localStorage.getItem("cart_order"))
+        let img, name, price, qty, sum;
+        let count = 0;
+
+
+        for (let i = 0; i <= localStorage.length; i++) {
+            img = carts[i].image;
+            name = carts[i].name;
+            price = carts[i].price;
+            qty = carts[i].quantity;
+            let cost = parseInt(price);
+            let x = parseInt(qty)
+            sum = + cost * x
+
+
+            let div = document.createElement("div")
+            div.innerHTML = `
+            <div class="col col-xl-2 col-lg-2 col-md-6 col-sm-6"><img src='${img}' class="img-fluid" alt=""></div>
+                <div class="col col-4 my-auto">
+                    <h4><strong>${name}</strong></h4>
+                    <h6><strong>Rs. ${price}</strong></h6>
+                    <h4><button onclick='remove_item("${i}")' class="btn remove_btn btn-outline-primary"> Remove </button></h4>
+                </div>
+                <div class="col col-xl-2 col-lg-2 col-md-6 col-sm-6 my-auto border border-2 py-auto ">QTY  - &ensp; ${qty}</div>
+        `
+            product.appendChild(div)
+            div.classList.add("row")
+            div.classList.add("justify-content-center")
+            div.classList.add("my-3")
+
+            array_cost[i] = sum++;
+
+            count += array_cost[i]
+
+            let div2 = document.createElement("div")
+
+            div2.innerHTML = `
+            <ol class="list-group col col-6 ">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">${name}</div>
+                                
+                            </div>
+                            <span class="badge bg-secondary rounded-pill">Rs. ${price} * ${qty} = ${count}</span>
+                        </li>
+                    </ol>
+            `
+            product_row.appendChild(div2)
+            div2.classList.add("row")
+            div2.classList.add("justify-content-center")
+            div2.classList.add("my-2")
+
+            console.log(count)
+
+
+
+
+            const items = (() => {
+                const fieldValue = localStorage.getItem('cart_order');
+                return fieldValue === null
+                    ? []
+                    : JSON.parse(fieldValue);
+            })();
+
+            items.push({ "id": `${carts[i].id}`, "image": `${carts[i].image}`, "name": `${carts[i].name}`, "price": `${carts[i].price}`, "quantity": `${carts[i].quantity}` });
+
+            localStorage.setItem('cart_order', JSON.stringify(items));
+
+
+        }
+
+        function remove_item(i) {
+
+            console.log(i)
+            carts.splice(i, 1);
+            carts_order.splice(i, 1);
+            localStorage.setItem('cart', JSON.stringify(carts));
+            localStorage.setItem('cart_order', JSON.stringify(carts_order));
+
+            location.reload()
+            alert("item removed")
+        }
+
+        function order() {
+            localStorage.removeItem("cart")
+            location.reload()
+        }
+
+
+    </script>
+
+
+    <script src="functions.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+body {
+    background-color: rgba(127, 255, 212, 0.097);
+}
+
+nav .navbar-brand span, .navbar-brand span {
+    font-size: 2rem;
+    color: rgb(77, 164, 199);
+    font-weight: bolder;
+}
+
+nav a,
+nav .nav-link {
+    color: black;
+}
+
+
+nav a:hover {
+    color: rgb(77, 164, 199);
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+nav {
+    background-color: rgba(127, 255, 212, 0.196);
+}
+
+.main-img img {
+    position: absolute;
+    width: 100%;
+    height: 650px;
+}
+
+.main-img h1 .btn {
+    width: 15%;
+    border-radius: 5px;
+}
+
+
+.main-img h1 {
+    font-size: 5rem;
+    color: whitesmoke;
+    position: relative;
+    vertical-align: middle;
+    height: 650px;
+
+    padding-left: 5%;
+    padding-top: 7%;
+
+    background: linear-gradient(90deg, rgba(1, 0, 8, 0.6896008403361344) 0%, rgba(0, 0, 4, 0.627) 5%, rgba(59, 58, 58, 0.146) 45%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+.master_bedroom {
+    background-color: rgba(128, 128, 128, 0.18);
+}
+
+.our_products a  , .products_js a{
+    color: orangered;
+    text-decoration: none;
+}
+#anchor{
+    color: orangered;
+}
+.our_products a:hover , .products_js a:hover {
+    color: orangered;
+    font-size: 18px;
+}
+
+.active {
+    color: orangered;
+    border-left: 2px solid orangered;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+    font-size: 1.2vw;
+    color: white;
+}
+
+
+@media screen and (max-width:1300px) {
+    .main-img h1 {
+        padding-top: 15%;
+        font-size: 4rem;
+        height: 600px;
+    }
+
+    .main-img img {
+        height: 600px;
+    }
+
+    .master_bedroom h1 {
+        font-size: 2rem;
+    }
+
+    .master_bedroom p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .master_bedroom h1 {
+        font-size: 1.5rem;
+    }
+
+    .master_bedroom p {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .main-img h1 {
+        padding-top: 20%;
+        font-size: 4rem;
+    }
+
+    .master_bedroom h1 {
+        font-size: 1rem;
+    }
+
+    .master_bedroom p {
+        font-size: 0.5rem;
+    }
+
+    .master_bedroom h1 {
+        font-size: 2.5rem;
+    }
+
+    .master_bedroom p {
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .main-img h1 {
+        padding-top: 20%;
+        font-size: 3rem;
+        height: 400px;
+    }
+
+    .main-img img {
+        height: 400px;
+    }
+
+    .main-img h1 .btn {
+        width: 25%;
+    }
+
+    .kitchen,
+    .master_bedroom_1,
+    .master_bedroom_2,
+    .master_bedroom_img1,
+    .master_bedroom_img2,
+    .products_js,
+    .review-txt,
+    .review-img ,
+    .our_products .col {
+        min-width: 100%;
+    }
+
+    .master_bedroom_1,
+    .review-txt {
+        order: 1;
+    }
+
+    .master_bedroom_img1,
+    .review-img {
+        order: 2;
+    }
+
+    .master_bedroom_2 {
+        order: 3;
+    }
+
+    .master_bedroom_img2 {
+        order: 4;
+    }
+
+
+    .foot {
+        min-width: 50%;
+        margin-top: 10% !important;
+    }
+
+}
